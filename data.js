@@ -1,0 +1,105 @@
+// All site content lives here. Edit this file to add or change entries.
+// roles: "game" (game & XR developer), "research" (HCI researcher), "ai" (AI developer)
+
+const SERIOUS_GAMES = [
+  { title: "VR stroke rehabilitation (master's thesis)", year: "2022–26", roles: ["research", "game"], link: "https://doi.org/10.2196/48900", linkLabel: "Read the paper",
+    role: "Designer, developer, researcher", tech: ["Unity", "Meta Quest", "Motion tracking", "User study"],
+    desc: "My master's thesis, awarded a Laureate distinction. Upper limb VR exergames designed with patients and therapists, then evaluated across multiple sessions using in game metrics. Published in JMIR Serious Games and IEEE SeGAH 2024." },
+  { title: "VR Arm IK and Kinetic Recorder", year: "2019–21", roles: ["research", "game"], link: "https://github.com/Dasel/VRamIK_kinetic_recorder", linkLabel: "Code on GitHub",
+    role: "Sole developer", tech: ["Unity", "C#", "Inverse kinematics", "VRTK"],
+    desc: "VR prototype for upper limb tracking: an inverse kinematics arm driven by the controllers, plus a recorder that logs motion and position data for experiments." },
+  { title: "Harvest Challenge VR", year: "2015–16", roles: ["research", "game", "ai"], video: "UJKH8Gf2EaE",
+    role: "Principal developer, codesigner", tech: ["Unity", "MindWave EEG", "HTC Vive"],
+    desc: "Neurofeedback game that trains sustained attention and relaxation in children with ADHD, driven by a wearable EEG headset." },
+  { title: "BKI: Cognitive Balance", year: "2013–14", roles: ["research", "game"], video: "lxND1rTazSY",
+    role: "Main developer", tech: ["Unity", "Kinect", "Emotiv EPOC"],
+    desc: "Hybrid brain and Kinect interface that combines motion capture with EEG for balance and cognitive training after stroke." },
+  { title: "Homunculus VR", year: "2019", roles: ["research"], link: "https://doi.org/10.1145/3364138.3364168", linkLabel: "Read the paper",
+    role: "Associate developer", tech: ["Unity", "HTC Vive", "Kinect", "SteamVR"],
+    desc: "Embodying the homunculus in virtual reality: an interactive lab procedure for brain mapping and visualization." },
+  { title: "Box and Block Test VR", year: "2018–19", roles: ["research", "game"],
+    role: "Principal developer", tech: ["Unity", "Manus VR gloves"],
+    desc: "VR version of a classic hand dexterity test with tracked gloves, built at M‑ITI for motor and cognitive training." },
+  { title: "BCI Duck Hunt", year: "2014", roles: ["research", "game", "ai"], video: "db8oVm8bnQA",
+    role: "Main developer", tech: ["Unity", "Emotiv EPOC", "OpenViBE"],
+    desc: "Motor imagery BCI game for neurorehabilitation. Presented at IEEE EMBS 2014 in Chicago." },
+  { title: "Karate Rehab", year: "2014", roles: ["research", "game"], video: "TNt0r42F_DA",
+    role: "Main developer", tech: ["Unity", "Kinect"],
+    desc: "Exergame for shoulder flexion rehabilitation in patients with upper limb monoparesis." },
+];
+
+const GAMES = [
+  { title: "Unreal Engine 5 exhibition showcase", year: "2025", roles: ["game"],
+    role: "Senior Game Developer, Globant", tech: ["Unreal Engine 5", "C++", "VFX", "UEFN"],
+    desc: "C++ gameplay and real time VFX for an interactive showcase presented at live public exhibitions. Also shipped two playable experiences in Unreal Editor for Fortnite." },
+  { title: "XR at Unity Technologies", year: "2020–25", roles: ["game"],
+    role: "Software Engineer", tech: ["Unity", "C#", "C++", "Magic Leap 2", "Quest", "Vision Pro"],
+    desc: "46 pull requests merged into Unity's source, 300+ engine issues solved, XR apps for Magic Leap 2, Meta Quest, Apple Vision Pro and Galaxy XR, and performance reviews on four AAA projects with up to 30% faster Android builds." },
+  { title: "Player Skill Modeling", year: "2020", roles: ["ai", "game"], link: "https://github.com/Dasel/ML", linkLabel: "Notebook on GitHub",
+    role: "Author", tech: ["Python", "scikit-learn", "Game analytics"],
+    desc: "Machine learning on the SkillCraft StarCraft II dataset: regression and k‑means clustering to predict a player's league from how they play." },
+  { title: "Joseph the Shipwrecked", year: "2020", roles: ["game"], video: "7CPy8-vsUwI",
+    link: "https://globalgamejam.org/2020/games/joseph-shipwrecked-6", linkLabel: "Global Game Jam page",
+    role: "Programmer", tech: ["Unity", "Game jam"],
+    desc: "A castaway must flee his island in a wooden boat after the volcano erupts. Made in 48 hours." },
+  { title: "Tiny Kitchen", year: "2020", roles: ["game"], video: "WxHTfUuIo10",
+    role: "Asset artist", tech: ["Unity Project Tiny"],
+    desc: "Demo for Unity's Project Tiny lightweight runtime." },
+  { title: "Sustainable Magic VR", year: "2019–21", roles: ["game"], video: "1aqIaV8LqXo",
+    role: "Developer", tech: ["Unity", "Google VR", "Android"],
+    desc: "Game for change whose mechanics teach concepts of sustainable management." },
+  { title: "Guardians of Lapse", year: "2019–21", roles: ["game"], video: "VoJEOC4OnCQ",
+    role: "Programmer", tech: ["Unity", "Android"],
+    desc: "Race against time and a rival faction to build the strongest guardian troop before the Alters arrive." },
+  { title: "Adventure Tales: Agua", year: "2019–21", roles: ["game"], video: "kS35e_k8NTo",
+    role: "Main developer", tech: ["Unity"],
+    desc: "In a postapocalyptic world where temple guardians have taken drinkable water from humans, a girl named Lia takes on a great challenge." },
+  { title: "Hola Soy Danny", year: "2019–21", roles: ["game"], video: "aKHxTxkXY8s",
+    role: "Programmer", tech: ["Unity", "iOS", "Android"],
+    desc: "Parody game where YouTuber Daniel Samper meets figures of Colombian politics." },
+  { title: "Donald Trumpete", year: "2019–21", roles: ["game"], video: "lCOGJgQB6vQ",
+    role: "Lead programmer", tech: ["Unity", "Android"],
+    desc: "Parody platformer: collect points, unlock items and advance through levels." },
+  { title: "You Run", year: "2019–21", roles: ["game"], video: "EWj3Bym-yBA",
+    role: "Main developer", tech: ["Unity", "2D"],
+    desc: "Multiplatform 2D runner set in a comic world starring YouTubers and their followers." },
+];
+
+const PUBLICATIONS = [
+  { year: 2024, roles: ["research", "game", "ai"], title: "Design of Virtual Reality Exergames for Upper Limb Stroke Rehabilitation Following Iterative Design Methods: Usability Study", authors: "J. F. Villada Castillo, M. F. Montoya Vega, J. E. Muñoz Cardona, D. Lopez, L. Quiñones, O. A. Henao Gallo, J. F. Lopez", venue: "JMIR Serious Games, vol. 12, e48900", link: "https://doi.org/10.2196/48900" },
+  { year: 2024, roles: ["research", "game", "ai"], title: "Exploratory Analysis of Game Metrics of a Multi‑Session Study of a Virtual Reality Exergame for Stroke Rehabilitation", authors: "J. F. Villada Castillo, J. E. Muñoz, D. Lopez, J. F. Lopez, O. Henao Gallo", venue: "IEEE 12th Int. Conf. on Serious Games and Applications for Health (SeGAH)" },
+  { year: 2019, roles: ["research", "game"], title: "Embodying the Homunculus in Virtual Reality: Creating an Interactive Laboratory Procedure for Brain Mapping and Visualization", authors: "J. E. Muñoz, M. F. Montoya, D. S. Lopez, O. A. Henao", venue: "ACM REHAB 2019, 5th Workshop on ICTs for Improving Patients Rehabilitation Research Techniques", link: "https://doi.org/10.1145/3364138.3364168" },
+  { year: 2017, roles: ["research", "ai"], title: "Statistical Validation for Coordinative Motor Comportment Using Support Vector Machine in Joints Dynamical System", authors: "M. S. Casanova, D. S. Lopez, A. F. Calvo, O. H. Gallo", venue: "XVIII Int. Conf. on Human Computer Interaction (Interacción), ACM" },
+  { year: 2016, roles: ["research", "ai"], title: "Influence of a BCI Neurofeedback Videogame in Children with ADHD: Quantifying the Brain Activity Through an EEG Signal Processing Dedicated Toolbox", authors: "D. Zamora Blandón, J. E. Muñoz, D. S. Lopez, O. Henao Gallo", venue: "IEEE 11th Colombian Computing Conference (CCC)" },
+  { year: 2015, roles: ["research", "game"], title: "Design and Creation of a BCI Videogame to Train Sustained Attention in Children with ADHD", authors: "J. E. Muñoz, D. S. Lopez, J. F. Lopez, A. Lopez", venue: "IEEE 10th Colombian Computing Conference (10CCC)" },
+  { year: 2015, roles: ["research"], title: "Exergames as a Tool for the Assessment of Postural Balance in a Patient with Multiple Sclerosis: The Role of Biomechanical Analysis in the Quantification of Movement", authors: "M. S. Casanova, J. E. Muñoz, O. A. Henao, D. S. Lopez", venue: "IEEE 10th Colombian Computing Conference (10CCC)" },
+  { year: 2014, roles: ["research", "game"], title: "Application of Hybrid BCI and Exergames for Balance Rehabilitation After Stroke", authors: "J. E. Muñoz, R. Chavarriaga, D. S. Lopez", venue: "11th Conf. on Advances in Computer Entertainment Technology (ACE), ACM" },
+  { year: 2014, roles: ["research", "ai"], title: "Low Cost Implementation of a Motor Imagery Experiment with BCI System and Its Use in Neurorehabilitation", venue: "36th Annual Int. Conf. of the IEEE EMBS, Chicago" },
+  { year: 2014, roles: ["research", "game"], title: "Shoulder Flexion Rehabilitation in Patients with Monoparesia Using an Exergame", venue: "IEEE 3rd Int. Conf. on Serious Games and Applications for Health (SeGAH)" },
+  { year: 2014, roles: ["research"], title: "Multimodal System for Rehabilitation Aids Using Videogames", authors: "J. E. Muñoz et al.", venue: "IEEE CONCAPAN XXXIV" },
+  { year: 2013, roles: ["research", "ai"], title: "BKI: Brain Kinect Interface, a New Hybrid BCI for Rehabilitation", venue: "Games for Health, Springer" },
+];
+
+const EXPERIENCE = [
+  { when: "2025 – now", roles: ["game", "ai"], role: "Senior Game Developer", org: "Globant", desc: "SDK and platform integration for large scale games, C++ gameplay and real time VFX in Unreal Engine 5, AI assisted issue triage that raised correction rates by up to 25%, and two UEFN experiences." },
+  { when: "2025", roles: ["research", "game"], role: "Research Software Engineer", org: "Wilfrid Laurier University, Canada", desc: "Taught four Unity and XR workshops for Master of UX students and mentored immersive research prototypes." },
+  { when: "2020 – 2025", roles: ["game"], role: "Software Engineer", org: "Unity Technologies", desc: "46 merged pull requests to Unity source, 300+ issues across rendering, input, networking and XR, AAA performance reviews, and CI/CD pipelines with Jenkins, AWS and Docker." },
+  { when: "2018 – 2019", roles: ["research", "game"], role: "Game Developer", org: "M‑ITI, Portugal", desc: "VR applications and interactive 3D systems with real time networking and tracked glove input." },
+  { when: "2016 – 2018", roles: ["game"], role: "Programmer", org: "Somnia Studio", desc: "Gameplay and services for Android and iOS games." },
+  { when: "2015 – 2018", roles: ["research", "ai"], role: "Researcher and developer", org: "HCI Group, UTP", desc: "Brought brain computer interfaces and motion capture into serious games, from signal processing to play testing." },
+  { when: "2013 – 2016", roles: ["research", "game"], role: "Earlier roles", org: "CTO, COO, teacher, HCI researcher", desc: "Mediamatics Global, PosicionArtes, Unitecnicas and Clínica de Dolor del Eje Cafetero." },
+];
+
+const SKILLS = [
+  { group: "Game and XR development", role: "game", items: ["Unity", "Unreal Engine 5", "UEFN", "C#", "C++", "OpenXR", "XR Interaction Toolkit", "Meta Quest", "Magic Leap 2", "Apple Vision Pro", "Rendering", "Profiling", "Real time networking"] },
+  { group: "Research", role: "research", items: ["User studies", "Iterative design", "BCI and EEG", "Motion capture", "Exergames", "Game metrics", "Academic writing"] },
+  { group: "AI and data", role: "ai", items: ["Python", "scikit-learn", "Signal processing", "SVM and clustering", "AI assisted workflows", "Game analytics"] },
+  { group: "Engineering", role: "all", items: ["Git", "Perforce", "Code review", "Jenkins CI/CD", "Docker", "AWS", "GCP", "Firebase", "TypeScript", "Kotlin"] },
+];
+
+const ROLE_COPY = {
+  all: "I build games and XR, and I study how people move, learn and play inside them.",
+  game: "Five years inside Unity's engine, now shipping Unreal Engine 5 work at Globant.",
+  research: "Twelve papers on serious games, brain computer interfaces and VR rehabilitation.",
+  ai: "EEG signal processing, player modeling and AI assisted tooling for game teams.",
+};

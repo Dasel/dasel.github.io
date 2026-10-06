@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>David Lopez · Games, XR and research</title>
+  <meta name="description" content="David Lopez builds games and XR in Unity and Unreal, and researches serious games, brain computer interfaces and VR rehabilitation.">
+  <meta property="og:title" content="David Lopez · Games, XR and research">
+  <meta property="og:description" content="Game and XR developer, HCI researcher and AI developer. Five years at Unity, now at Globant.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dasel.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23181818'/%3E%3Ctext x='16' y='21.5' font-family='system-ui,sans-serif' font-size='14' font-weight='600' text-anchor='middle' fill='%23fff'%3Edl%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="island" id="island">
+    <a class="brand" href="#top" aria-label="David Lopez, back to top">dl</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#serious-games">Serious games</a>
+      <a href="#games">Games</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+    </nav>
+    <button id="theme" class="icon-btn" aria-label="Switch light or dark theme"><i class="ph ph-circle-half"></i></button>
+    <a class="btn btn-sm" href="#contact">Contact</a>
+    <button id="burger" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><span></span><span></span></button>
+  </header>
+
+  <div id="sheet" class="sheet" aria-hidden="true">
+    <nav aria-label="Menu">
+      <a href="#about">About</a>
+      <a href="#serious-games">Serious games</a>
+      <a href="#games">Games</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="eyebrow mono reveal">David Lopez · Madrid, open to relocation</p>
+      <h1 class="reveal">Games and XR<br>built on research<br>into how people play.</h1>
+      <p class="sub reveal" id="role-sub">I build games and XR, and I study how people move, learn and play inside them.</p>
+
+      <div class="lens reveal" role="radiogroup" aria-label="Highlight work for a role">
+        <span class="lens-label mono">View as</span>
+        <button class="chip active" data-role="all" role="radio" aria-checked="true">Everything</button>
+        <button class="chip" data-role="game" role="radio" aria-checked="false"><i class="ph ph-game-controller"></i>Game developer</button>
+        <button class="chip" data-role="research" role="radio" aria-checked="false"><i class="ph ph-flask"></i>Researcher</button>
+        <button class="chip" data-role="ai" role="radio" aria-checked="false"><i class="ph ph-brain"></i>AI developer</button>
+      </div>
+
+      <div class="actions reveal">
+        <a class="btn" href="mailto:daselopez@gmail.com"><i class="ph ph-envelope-simple"></i>Email me</a>
+        <a class="text-link" href="#serious-games">See the work <i class="ph ph-arrow-down"></i></a>
+      </div>
+
+      <ul class="proof reveal">
+        <li><b data-count="46">46</b><span>pull requests merged into Unity</span></li>
+        <li><b data-count="300" data-suffix="+">300+</b><span>engine issues solved</span></li>
+        <li><b data-count="12">12</b><span>peer reviewed papers</span></li>
+        <li><b data-count="19">19</b><span>games and prototypes</span></li>
+      </ul>
+    </section>
+
+    <section id="about" class="section">
+      <div class="head reveal"><h2>About</h2></div>
+      <div class="about">
+        <p class="lead reveal">I'm a software developer who builds interactive, real time applications: games, XR experiences and the tools behind them. Over seven years as a professional I've worked on every layer, from engine source code and rendering to gameplay, UI, networking, backends and build pipelines, and I care as much about clean architecture and performance as about how the result feels in someone's hands. I've shipped on PC, mobile, the web and headsets, in startups, research labs and at Unity Technologies, and I'm most at home where a hard technical problem meets a real person using the result.</p>
+        <div class="pillars">
+          <article class="pillar reveal" data-roles="game">
+            <i class="ph ph-game-controller"></i>
+            <h3>Game and XR developer</h3>
+            <p>Unity and Unreal Engine 5 across Meta Quest, Magic Leap 2, Apple Vision Pro and mobile, plus up to 30% faster Android builds on AAA reviews.</p>
+          </article>
+          <article class="pillar reveal" data-roles="research">
+            <i class="ph ph-flask"></i>
+            <h3>HCI researcher</h3>
+            <p>Twelve papers in IEEE, ACM, Springer and JMIR on exergames, BCI and VR rehabilitation, each built and tested with real patients.</p>
+          </article>
+          <article class="pillar reveal" data-roles="ai">
+            <i class="ph ph-brain"></i>
+            <h3>AI developer</h3>
+            <p>EEG signal processing, SVM and clustering models, player skill modeling, and AI assisted triage that cut resolution times by about 20%.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tagline" aria-label="Tagline">
+      <p id="tagline">Seven years building games and XR professionally, on top of a research path that turned brain signals and motion capture into play.</p>
+    </section>
+
+    <section id="serious-games" class="section">
+      <div class="head reveal">
+        <h2>Serious games</h2>
+        <p class="muted">Games for rehabilitation, attention training and research, most of them published.</p>
+      </div>
+      <div class="grid" id="serious-grid"></div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="head reveal">
+        <h2>Games</h2>
+        <p class="muted">Commercial titles, engine work, game jams and player analytics.</p>
+      </div>
+      <div class="grid" id="games-grid"></div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="head reveal">
+        <h2>Publications</h2>
+        <a class="text-link" href="https://scholar.google.com/citations?user=spSBTOoAAAAJ" target="_blank" rel="noopener">Google Scholar <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+      <ol class="pubs" id="pubs"></ol>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="head reveal"><h2>Experience</h2></div>
+      <ol class="timeline" id="timeline"></ol>
+      <div class="edu reveal">
+        <h3>Education</h3>
+        <p><b>Master's, Systems and Computer Engineering</b><span class="muted">Universidad Tecnológica de Pereira · 2022 to 2026 · EUR‑ACE accredited · Laureate thesis</span></p>
+        <p><b>B.Sc. Systems and Computer Engineering</b><span class="muted">Universidad Tecnológica de Pereira · 2013 to 2018</span></p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="head reveal"><h2>Skills</h2><p class="muted">Spanish native, English C1.</p></div>
+      <div class="skills" id="skill-groups"></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="reveal">Hiring for games, XR<br>or applied research?</h2>
+      <p class="muted reveal">I'm open to roles in Spain, across the EU, or remote.</p>
+      <div class="reveal contact-row">
+        <a class="btn" href="mailto:daselopez@gmail.com"><i class="ph ph-envelope-simple"></i>Email me</a>
+        <button class="btn ghost" id="copy" type="button"><i class="ph ph-copy"></i><span>daselopez@gmail.com</span></button>
+      </div>
+      <ul class="social reveal">
+        <li><a href="https://www.linkedin.com/in/daselopez" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i>LinkedIn</a></li>
+        <li><a href="https://github.com/Dasel" target="_blank" rel="noopener"><i class="ph ph-github-logo"></i>GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=spSBTOoAAAAJ" target="_blank" rel="noopener"><i class="ph ph-graduation-cap"></i>Scholar</a></li>
+        <li><a href="https://www.researchgate.net/profile/David_Lopez162" target="_blank" rel="noopener"><i class="ph ph-atom"></i>ResearchGate</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1AcZGpXzMY0kSuLupRqCPwzvUWqj8evqy?usp=sharing" target="_blank" rel="noopener"><i class="ph ph-certificate"></i>Certifications</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="mono muted">© <span id="year">2026</span> David Lopez · Built by hand, no tracking</footer>
+
+  <dialog id="modal" aria-labelledby="modal-title">
+    <button class="icon-btn close" aria-label="Close"><i class="ph ph-x"></i></button>
+    <div id="modal-body"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
