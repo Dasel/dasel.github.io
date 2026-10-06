@@ -118,7 +118,7 @@ h3 { font-size: 1.125rem; line-height: 1.75rem; }
 .hero { padding-top: 64px; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; align-items: center; }
 .hello { font-size: 1.25rem; line-height: 1.75rem; color: var(--muted); font-weight: 500; }
 h1 {
-  font-size: 8rem; line-height: .92; letter-spacing: -.055em; font-weight: 600; margin-top: 8px;
+  font-size: 4.5rem; line-height: 1; letter-spacing: -.045em; white-space: nowrap; font-weight: 600; margin-top: 8px;
   background: linear-gradient(90deg, var(--h-from), var(--h-to));
   -webkit-background-clip: text; background-clip: text; color: transparent;
   padding-bottom: 8px; font-optical-sizing: auto;
@@ -273,7 +273,7 @@ dialog .close { position: absolute; top: 16px; right: 16px; z-index: 2; backgrou
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .portrait { max-width: 320px; order: -1; transform: none; }
-  h1 { font-size: 6rem; }
+  h1 { font-size: 3.75rem; }
   .links, .nav-contact { display: none; }
   .burger { display: block; }
   .island { width: calc(100% - 32px); justify-content: space-between; padding-left: 16px; }
@@ -281,7 +281,7 @@ dialog .close { position: absolute; top: 16px; right: 16px; z-index: 2; backgrou
 }
 @media (max-width: 640px) {
   main, footer { padding-inline: 16px; }
-    h1 { font-size: 4.5rem; line-height: .95; }
+    h1 { font-size: 3rem; line-height: 1; }
   .portrait { max-width: 240px; }
     .tagline p { font-size: 1.875rem; line-height: 2.25rem; }
   .contact h2 { font-size: 2.25rem; line-height: 2.5rem; }
