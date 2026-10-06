@@ -2,6 +2,10 @@
 // roles: "game" (game & XR developer), "research" (HCI researcher), "ai" (AI developer)
 
 const SERIOUS_GAMES = [
+  { title: "Physiologically Adaptive Games", year: "2025", roles: ["research", "ai", "game"], video: "HEkVq0lvKww", image: "img/eeg-demo.jpg",
+    link: "https://www.bioadaptiveinterface.com/projects-and-publications", linkLabel: "BioAdaptive Interface Lab",
+    role: "Developer, with the BioAdaptive Interface Lab", tech: ["Unity", "EEG", "Heart rate", "EMG", "Adaptive algorithms"],
+    desc: "How real time biosignals such as heart rate, brain activity and muscle movement can shape gameplay as it happens. Wearable sensors and adaptive algorithms let the game respond to a player's emotions, stress and cognitive state, for more immersive and personal experiences in serious games, rehabilitation, training and well being." },
   { title: "Master's thesis: game metrics in VR stroke rehab", year: "2022–26", roles: ["research", "game"], link: "https://doi.org/10.2196/48900", linkLabel: "Read the paper",
     role: "Designer, developer, researcher", tech: ["Unity", "Meta Quest", "Motion tracking", "User study"],
     desc: "Quantifying Human Performance Through Game Metrics in a Virtual Reality Exergame for Upper‑Limb Stroke Rehabilitation. Awarded a Laureate distinction. Upper limb VR exergames designed with patients and therapists, then evaluated across multiple sessions using in game metrics. Published in JMIR Serious Games and IEEE SeGAH 2024." },
@@ -29,6 +33,13 @@ const SERIOUS_GAMES = [
 ];
 
 const GAMES = [
+  { title: "Controller and hand tracking together", year: "2026", roles: ["game", "research"],
+    role: "Developer · in progress", tech: ["XR", "Hand tracking", "Controllers"],
+    desc: "Tracks controller position and XR hand tracking at the same time, so a player can hold a tracked controller while the other hand stays free for natural hand input." },
+  { title: "Space Invaders in Verse", year: "2025", roles: ["game"], drive: "1L8KVB0sAdtBCbMZn5ONKBUnyaRIUm5vJ",
+    link: "https://github.com/Dasel/space-invaders-verse", linkLabel: "Code on GitHub",
+    role: "Developer", tech: ["UEFN", "Verse", "Unreal Engine"],
+    desc: "A Space Invaders remake for Fortnite built in UEFN with Verse, split into five small device scripts for config, player, invaders, game loop and HUD." },
   { title: "Unreal Engine 5 exhibition showcase", year: "2025", roles: ["game"],
     role: "Senior Game Developer, Globant", tech: ["Unreal Engine 5", "C++", "VFX", "UEFN"],
     desc: "C++ gameplay and real time VFX for an interactive showcase presented at live public exhibitions. Also shipped two playable experiences in Unreal Editor for Fortnite." },
@@ -82,7 +93,7 @@ const PUBLICATIONS = [
 
 const EXPERIENCE = [
   { when: "2025 – now", roles: ["game", "ai"], role: "Senior Game Developer", org: "Globant", desc: "SDK and platform integration for large scale games, C++ gameplay and real time VFX in Unreal Engine 5, AI assisted issue triage that raised correction rates by up to 25%, and two UEFN experiences." },
-  { when: "2025", roles: ["research", "game"], role: "Research Software Engineer", org: "Wilfrid Laurier University, Canada", desc: "Taught four Unity and XR workshops for Master of UX students and mentored immersive research prototypes." },
+  { when: "2025", roles: ["research", "game"], role: "Research intern, XR workshops", org: "Wilfrid Laurier University, Canada", image: "img/laurier-workshop.jpg", desc: "Research internship with the BioAdaptive Interface Lab. Ran four hands on Unity and XR workshops for Master of UX students, from connecting a Quest to Unity to spatial UI and performance, mentored students on their XR prototypes, and demoed the lab's physiologically adaptive games at VRTO." },
   { when: "2020 – 2025", roles: ["game"], role: "Software Engineer", org: "Unity Technologies", desc: "46 merged pull requests to Unity source, 300+ issues across rendering, input, networking and XR, AAA performance reviews, and CI/CD pipelines with Jenkins, AWS and Docker." },
   { when: "2018 – 2019", roles: ["research", "game"], role: "Game Developer", org: "M‑ITI, Portugal", desc: "VR applications and interactive 3D systems with real time networking and tracked glove input." },
   { when: "2016 – 2018", roles: ["game"], role: "Programmer", org: "Somnia Studio", desc: "Gameplay and services for Android and iOS games." },
@@ -97,9 +108,17 @@ const SKILLS = [
   { group: "Engineering", role: "all", items: ["Git", "Perforce", "Code review", "Jenkins CI/CD", "Docker", "AWS", "GCP", "Firebase", "TypeScript", "Kotlin"] },
 ];
 
+const GALLERY = [
+  { src: "img/laurier-workshop.jpg", alt: "David guiding a student wearing a Meta Quest headset during an XR workshop", caption: "Teaching a Unity and XR workshop at Laurier, 2025" },
+  { src: "img/vrto-booth.jpg", alt: "David and a colleague at the BioAdaptive Interface Lab booth with headsets and laptops", caption: "Demoing at the BioAdaptive Interface Lab booth, VRTO" },
+  { src: "img/eeg-demo.jpg", alt: "David wearing an EEG headband while a biofeedback game records a baseline", caption: "Testing a physiologically adaptive game with EEG" },
+  { src: "img/laurier-lab.jpg", alt: "David sitting in an XR lab with a large display and headsets", caption: "The XR lab at Laurier" },
+  { src: "img/immersive-van-gogh.jpg", alt: "Selfie of David inside an immersive Van Gogh projection", caption: "Off duty, still inside immersive media" },
+];
+
 const ROLE_COPY = {
-  all: "I build games and XR, and I study how people move, learn and play inside them.",
-  game: "Five years inside Unity's engine, now shipping Unreal Engine 5 work at Globant.",
+  all: "Game and XR developer. I build interactive worlds, and I study how people move, learn and play inside them.",
+  game: "Five years inside Unity's engine, now building with Unreal Engine 5 at Globant.",
   research: "Twelve papers on serious games, brain computer interfaces and VR rehabilitation.",
   ai: "EEG signal processing, player modeling and AI assisted tooling for game teams.",
 };

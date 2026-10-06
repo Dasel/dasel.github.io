@@ -35,9 +35,12 @@
     el.type = "button";
     el.className = "card reveal";
     el.dataset.roles = p.roles.join(" ");
-    const thumb = p.video
-      ? `<img loading="lazy" src="https://i.ytimg.com/vi/${p.video}/hqdefault.jpg" alt="Video still from ${esc(p.title)}"><span class="play"><i class="ph ph-play"></i></span>`
-      : `<span class="glyph">${initials(p.title)}</span>`;
+    const play = (p.video || p.drive) ? `<span class="play"><i class="ph ph-play"></i></span>` : "";
+    const thumb = p.image
+      ? `<img class="photo" loading="lazy" src="${esc(p.image)}" alt="${esc(p.title)}">${play}`
+      : p.video
+      ? `<img loading="lazy" src="https://i.ytimg.com/vi/${p.video}/hqdefault.jpg" alt="Video still from ${esc(p.title)}">${play}`
+      : `<span class="glyph">${initials(p.title)}</span>${play}`;
     el.innerHTML = `
       <div class="thumb">${thumb}</div>
       <div class="card-body">
@@ -48,7 +51,7 @@
       </div>`;
     const img = el.querySelector("img");
     if (img) img.addEventListener("error", () => img.replaceWith(Object.assign(document.createElement("span"), { className: "glyph", textContent: initials(p.title) })));
-    el.addEventListener("click", () => openProject(p));
+    el.addEventListener("click", (e) => openProject(p, el));
     return el;
   };
   SERIOUS_GAMES.forEach((p) => $("#serious-grid").appendChild(card(p)));
@@ -69,10 +72,19 @@
 
   // modal
   const modal = $("#modal");
-  function openProject(p) {
-    const media = p.video
-      ? `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/${p.video}?autoplay=1&rel=0" title="${esc(p.title)} video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
-      : "";
+  function openProject(p, from) {
+    const src = p.video ? `https://www.youtube-nocookie.com/embed/${p.video}?autoplay=1&rel=0`
+      : p.drive ? `https://drive.google.com/file/d/${p.drive}/preview` : "";
+    const media = src
+      ? `<div class="embed"><iframe src="${src}" title="${esc(p.title)} video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+      : p.image ? `<div class="embed"><img src="${esc(p.image)}" alt="${esc(p.title)}" style="width:100%;height:100%;object-fit:cover"></div>` : "";
+    // grow the window out of the card that was tapped
+    if (from) {
+      const r = from.getBoundingClientRect();
+      const w = Math.min(860, innerWidth - 32), h = Math.min(innerHeight - 48, 640);
+      modal.style.setProperty("--ox", `${r.left + r.width / 2 - (innerWidth - w) / 2}px`);
+      modal.style.setProperty("--oy", `${r.top + r.height / 2 - (innerHeight - h) / 2}px`);
+    }
     $("#modal-body").innerHTML = `${media}
       <div class="modal-text">
         <p class="mono" style="font-size:.875rem">${esc(p.year ? p.year + " · " : "")}${esc(p.role)}</p>
@@ -100,13 +112,25 @@
   // experience
   $("#timeline").innerHTML = EXPERIENCE.map((e) => `
     <li class="reveal" data-roles="${e.roles.join(" ")}"><span class="when mono">${esc(e.when)}</span>
-      <div><b>${esc(e.role)}</b> · <span class="org">${esc(e.org)}</span><p>${esc(e.desc)}</p></div></li>`).join("");
+      <div><b>${esc(e.role)}</b> · <span class="org">${esc(e.org)}</span><p>${esc(e.desc)}</p>${e.image ? `<img class="tl-photo" loading="lazy" src="${esc(e.image)}" alt="${esc(e.role)} at ${esc(e.org)}">` : ""}</div></li>`).join("");
 
   // skills
   const icons = { game: "ph-game-controller", research: "ph-flask", ai: "ph-brain", all: "ph-wrench" };
   $("#skill-groups").innerHTML = SKILLS.map((s) => `
     <div class="skill reveal" data-roles="${s.role === "all" ? "game research ai" : s.role}">
       <h3><i class="ph ${icons[s.role]}"></i>${esc(s.group)}</h3>${tags(s.items)}</div>`).join("");
+
+  // photo gallery (native scroll snap carries momentum; buttons step one photo)
+  const gal = $("#gallery");
+  gal.innerHTML = GALLERY.map((g) => `
+    <figure class="shot${/van-gogh/.test(g.src) ? " wide" : ""}"><div class="ph-frame"><img loading="lazy" src="${esc(g.src)}" alt="${esc(g.alt)}"></div>
+    <figcaption>${esc(g.caption)}</figcaption></figure>`).join("");
+  const step = (dir) => {
+    const shot = $(".shot", gal);
+    gal.scrollBy({ left: dir * (shot.offsetWidth + 16), behavior: reduced ? "auto" : "smooth" });
+  };
+  $("#g-prev").addEventListener("click", () => step(-1));
+  $("#g-next").addEventListener("click", () => step(1));
 
   // role lens
   const sub = $("#role-sub");
@@ -154,12 +178,4 @@
   }), { rootMargin: "-45% 0px -50% 0px" });
   $$("main section[id]").forEach((s) => so.observe(s));
 
-  // copy email
-  const copy = $("#copy");
-  copy.addEventListener("click", async () => {
-    const label = $("span", copy);
-    try { await navigator.clipboard.writeText("daselopez@gmail.com"); label.textContent = "Copied to clipboard"; }
-    catch (e) { label.textContent = "daselopez@gmail.com"; getSelection().selectAllChildren(label); }
-    setTimeout(() => { label.textContent = "daselopez@gmail.com"; }, 2200);
-  });
 })();
