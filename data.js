@@ -2,9 +2,9 @@
 // roles: "game" (game & XR developer), "research" (HCI researcher), "ai" (AI developer)
 
 const SERIOUS_GAMES = [
-  { title: "VR stroke rehabilitation (master's thesis)", year: "2022–26", roles: ["research", "game"], link: "https://doi.org/10.2196/48900", linkLabel: "Read the paper",
+  { title: "Master's thesis: game metrics in VR stroke rehab", year: "2022–26", roles: ["research", "game"], link: "https://doi.org/10.2196/48900", linkLabel: "Read the paper",
     role: "Designer, developer, researcher", tech: ["Unity", "Meta Quest", "Motion tracking", "User study"],
-    desc: "My master's thesis, awarded a Laureate distinction. Upper limb VR exergames designed with patients and therapists, then evaluated across multiple sessions using in game metrics. Published in JMIR Serious Games and IEEE SeGAH 2024." },
+    desc: "Quantifying Human Performance Through Game Metrics in a Virtual Reality Exergame for Upper‑Limb Stroke Rehabilitation. Awarded a Laureate distinction. Upper limb VR exergames designed with patients and therapists, then evaluated across multiple sessions using in game metrics. Published in JMIR Serious Games and IEEE SeGAH 2024." },
   { title: "VR Arm IK and Kinetic Recorder", year: "2019–21", roles: ["research", "game"], link: "https://github.com/Dasel/VRamIK_kinetic_recorder", linkLabel: "Code on GitHub",
     role: "Sole developer", tech: ["Unity", "C#", "Inverse kinematics", "VRTK"],
     desc: "VR prototype for upper limb tracking: an inverse kinematics arm driven by the controllers, plus a recorder that logs motion and position data for experiments." },
