@@ -6,7 +6,7 @@ const SERIOUS_GAMES = [
     link: "https://www.bioadaptiveinterface.com/projects-and-publications", linkLabel: "BioAdaptive Interface Lab",
     role: "Developer, with the BioAdaptive Interface Lab", tech: ["Unity", "EEG", "Heart rate", "EMG", "Adaptive algorithms"],
     desc: "How real time biosignals such as heart rate, brain activity and muscle movement can shape gameplay as it happens. Wearable sensors and adaptive algorithms let the game respond to a player's emotions, stress and cognitive state, for more immersive and personal experiences in serious games, rehabilitation, training and well being." },
-  { title: "Master's thesis: game metrics in VR stroke rehab", year: "2022–26", roles: ["research", "game"], link: "https://doi.org/10.2196/48900", linkLabel: "Read the paper",
+  { title: "Master's thesis: game metrics in VR stroke rehab", year: "2022–26", roles: ["research", "game"], drives: ["1vz3JKT9TbaDdzcQONUVsLEO5ffuupSYV", "1kXxy7cO2s0T0qa0Q_g8dfqXRlnYA1905", "1NqZ20Ev46IaqbtQcUeI8BBr_F3vtNnHx"], link: "https://doi.org/10.2196/48900", linkLabel: "Read the paper",
     role: "Designer, developer, researcher", tech: ["Unity", "Meta Quest", "Motion tracking", "User study"],
     desc: "Quantifying Human Performance Through Game Metrics in a Virtual Reality Exergame for Upper‑Limb Stroke Rehabilitation. Awarded a Laureate distinction. Upper limb VR exergames designed with patients and therapists, then evaluated across multiple sessions using in game metrics. Published in JMIR Serious Games and IEEE SeGAH 2024." },
   { title: "VR Arm IK and Kinetic Recorder", year: "2019–21", roles: ["research", "game"], link: "https://github.com/Dasel/VRamIK_kinetic_recorder", linkLabel: "Code on GitHub",

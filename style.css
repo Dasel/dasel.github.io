@@ -250,6 +250,7 @@ dialog { transform-origin: var(--ox, 50%) var(--oy, 50%); }
 dialog .close { position: absolute; top: 16px; right: 16px; z-index: 2; background: var(--surface); }
 .embed { aspect-ratio: 16 / 9; max-width: 100%; border-radius: 16px; overflow: hidden; background: #000; }
 .embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+.vid-switch { display: flex; gap: 8px; flex-wrap: wrap; padding: 16px 24px 0; }
 .modal-text { padding: 24px; display: grid; gap: 12px; }
 .modal-text h3 { font-size: 1.5rem; line-height: 2rem; }
 .modal-text p { color: var(--muted); }

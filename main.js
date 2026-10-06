@@ -35,7 +35,7 @@
     el.type = "button";
     el.className = "card reveal";
     el.dataset.roles = p.roles.join(" ");
-    const play = (p.video || p.drive) ? `<span class="play"><i class="ph ph-play"></i></span>` : "";
+    const play = (p.video || p.drive || p.drives) ? `<span class="play"><i class="ph ph-play"></i></span>` : "";
     const thumb = p.image
       ? `<img class="photo" loading="lazy" src="${esc(p.image)}" alt="${esc(p.title)}">${play}`
       : p.video
@@ -73,8 +73,12 @@
   // modal
   const modal = $("#modal");
   function openProject(p, from) {
+    const drives = p.drives || (p.drive ? [p.drive] : []);
+    const driveSrc = (id) => `https://drive.google.com/file/d/${id}/preview`;
     const src = p.video ? `https://www.youtube-nocookie.com/embed/${p.video}?autoplay=1&rel=0`
-      : p.drive ? `https://drive.google.com/file/d/${p.drive}/preview` : "";
+      : drives.length ? driveSrc(drives[0]) : "";
+    const switcher = drives.length > 1
+      ? `<div class="vid-switch" role="tablist">${drives.map((id, i) => `<button class="chip${i ? "" : " active"}" role="tab" aria-selected="${!i}" data-src="${driveSrc(id)}">Video ${i + 1}</button>`).join("")}</div>` : "";
     const media = src
       ? `<div class="embed"><iframe src="${src}" title="${esc(p.title)} video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
       : p.image ? `<div class="embed"><img src="${esc(p.image)}" alt="${esc(p.title)}" style="width:100%;height:100%;object-fit:cover"></div>` : "";
@@ -85,7 +89,7 @@
       modal.style.setProperty("--ox", `${r.left + r.width / 2 - (innerWidth - w) / 2}px`);
       modal.style.setProperty("--oy", `${r.top + r.height / 2 - (innerHeight - h) / 2}px`);
     }
-    $("#modal-body").innerHTML = `${media}
+    $("#modal-body").innerHTML = `${media}${switcher}
       <div class="modal-text">
         <p class="mono" style="font-size:.875rem">${esc(p.year ? p.year + " · " : "")}${esc(p.role)}</p>
         <h3 id="modal-title">${esc(p.title)}</h3>
@@ -93,6 +97,10 @@
         ${tags(p.tech)}
         ${p.link ? `<p><a class="text-link" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.linkLabel || "Open link")} <i class="ph ph-arrow-up-right"></i></a></p>` : ""}
       </div>`;
+    $$(".vid-switch .chip", modal).forEach((b) => b.addEventListener("click", () => {
+      $$(".vid-switch .chip", modal).forEach((x) => { x.classList.toggle("active", x === b); x.setAttribute("aria-selected", x === b); });
+      $(".embed iframe", modal).src = b.dataset.src;
+    }));
     modal.showModal();
   }
   const closeModal = () => { modal.close(); $("#modal-body").innerHTML = ""; };
