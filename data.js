@@ -2,6 +2,9 @@
 // roles: "game" (game & XR developer), "research" (HCI researcher), "ai" (AI developer)
 
 const SERIOUS_GAMES = [
+  { title: "Music therapy at home: VR rhythmic game", year: "2025–26", roles: ["game", "research"], video: "EjDTrACUvtM",
+    role: "Game developer · BioAdaptive Interface Lab and CIMTR", tech: ["Unity", "VR", "Bare hand tracking", "Kinematic data"],
+    desc: "A codesigned VR rhythmic game that complements music therapy for older adults with independent practice at home. Players reach, grip and keep time with bare hands at a table, in calm scenic landscapes, while the system logs game events and kinematic data so clinicians can follow movement quality, synchrony and long term goals. Shaped by testing three commercial rhythm games with nine older adults, then piloted with 31 participants and presented as a poster at AGE‑WELL. A collaboration between the BioAdaptive Interface Lab and CIMTR, Waterloo, with Swarali Gogate, John E. Muñoz, Demian Kogutek, Tian Ip and Michelle Xu." },
   { title: "Physiologically Adaptive Games", year: "2025", roles: ["research", "ai", "game"], video: "HEkVq0lvKww", image: "img/eeg-demo.jpg",
     link: "https://www.bioadaptiveinterface.com/projects-and-publications", linkLabel: "BioAdaptive Interface Lab",
     role: "Developer, with the BioAdaptive Interface Lab", tech: ["Unity", "EEG", "Heart rate", "EMG", "Adaptive algorithms"],
